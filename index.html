@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <title>JumpJump - Prototype</title>
+  <style>
+    html,body{
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    span{
+      font-size: 0;
+      font-family: "Press Start 2P",sans-serif;
+    }
+    *{
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+<span>.</span>
+  <script src="js/phaser.min.js"></script>
+  <script src="js/hammer.min.js"></script>
+  <script src="js/boot.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/game.js"></script>
+  <script>
+    window.onload = function() {
+      var game = new Phaser.Game(480,640,Phaser.AUTO,'game');
+      game.state.add('Boot', Jumper.Boot);
+      game.state.add('Menu', Jumper.Menu);
+      game.state.add('Game', Jumper.Game);
+      game.state.start('Boot');
+    }
+  </script>
+</body>
+
+</html>
